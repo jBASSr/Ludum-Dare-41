@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float turnTimer;
 	public float actionTime;
 	public bool isMoving;
+	public bool isJumping;
 	public float moveTime;
 	public float SingleMoveTime;
 	public float WaitTime;
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 		//inputstack = GetComponent<InputStack> ();
 		groundCheck = transform.Find ("GroundCheck").transform;
 		isMoving = false;
+		isJumping = false;
 		endedTurn = false;
         forward = true;
         lives = 3;
@@ -65,18 +67,27 @@ public class PlayerMovement : MonoBehaviour {
 		if (speedX > 0 || speedX < 0) {
 			rb.velocity = new Vector2 (speedX * moveSpeed, rb.velocity.y);
 		} else if (!isGrounded) {
-			rb.velocity = new Vector2 (rb.velocity.x * 0.99f, rb.velocity.y);
+			rb.velocity = new Vector2 (rb.velocity.x * 0.988f, rb.velocity.y);
+		}
+		if (speedX == 0 && speedY == 0 && isGrounded) {
+			rb.velocity = new Vector2 (rb.velocity.x * 0.955f, rb.velocity.y);
+		}
+		Debug.Log (rb.velocity.x);
+		if (Mathf.Abs(rb.velocity.x) < 0.05 && isGrounded) {
+			rb.velocity = new Vector2 (0f, rb.velocity.y);
 		}
 		anim.SetFloat ("speed", Mathf.Abs (rb.velocity.x));
 		//Debug.Log ("xVel:" + rb.velocity.x);
-		if (speedY > 0 && isGrounded) {
+		if (speedY > 0 && isGrounded && !isJumping) {
 			rb.AddForce (new Vector2 (0.0f, jumpForce));
 			speedY = 0; // zero it earlier to prevent some crazy stuff when going through one-ways
 			anim.SetBool ("jumping", true);
+			isJumping = true;
             //FindObjectOfType<AudioManager>().Play("Jump");
             GameObject.Find("Audio").GetComponent<AudioManager>().Play("Jump");
         } else if (Mathf.Abs(rb.velocity.y) <= 0) {
 				anim.SetBool ("jumping", false);
+				isJumping = false;
 		}
 		if (rb.position.y < -10) {
             Death();

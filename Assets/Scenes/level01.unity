@@ -209,6 +209,10 @@ Prefab:
       propertyPath: sounds.Array.data[0].loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4448996632845704, guid: d5c94ac4b7b248944b2a7ded03ed0bea, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5c94ac4b7b248944b2a7ded03ed0bea, type: 2}
   m_IsPrefabParent: 0
@@ -251,9 +255,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 50113686444415516, guid: 60c8e7ad0c882b647a4cab085b765df3,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114278897234913442, guid: 60c8e7ad0c882b647a4cab085b765df3,
+        type: 2}
+      propertyPath: SingleMoveTime
+      value: 0.16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60c8e7ad0c882b647a4cab085b765df3, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &391233627 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4624970764918476, guid: 60c8e7ad0c882b647a4cab085b765df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 391233626}
 --- !u!1 &456796269 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1347698143310120, guid: 43ce2c5a858eccb4b9dac757d7ba5f8e,
@@ -384,7 +403,7 @@ Prefab:
     - target: {fileID: 224037344641597224, guid: 0b6be42c5c8fc754cab2b7ead5569361,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224037344641597224, guid: 0b6be42c5c8fc754cab2b7ead5569361,
         type: 2}
@@ -747,7 +766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1371023455
 MonoBehaviour:
@@ -760,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27d56b9657b1474ca79b97d5eb9fce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTarget: {fileID: 1584008371}
+  cameraTarget: {fileID: 391233627}
   trackSpeed: 1
   smoothX: 2
   smoothY: 5
@@ -805,7 +824,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4631909668944988, guid: 43ce2c5a858eccb4b9dac757d7ba5f8e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114711052874774256, guid: 43ce2c5a858eccb4b9dac757d7ba5f8e,
         type: 2}
@@ -906,11 +925,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45157623, y: 4.1422877}
   m_EdgeRadius: 0
---- !u!4 &1584008371 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4699383236280280, guid: 60c8e7ad0c882b647a4cab085b765df3,
-    type: 2}
-  m_PrefabInternal: {fileID: 391233626}
 --- !u!1 &2104465237
 GameObject:
   m_ObjectHideFlags: 0

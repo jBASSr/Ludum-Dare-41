@@ -11,11 +11,11 @@ public class DeckSystem : MonoBehaviour {
 	public int uniqueCards;
 	// Generating my own probablity
 	private int[] randyValues = { 
-		0,0,       // Jump
+		0,0,         // Jump
 		1,1,1,1,1, // Forward
-		2,2,       // Backward
-		3,		   // JumpBackwards
-		4,		   // JumpForwards
+		2,           // Backward
+		3,		     // JumpBackwards
+		4,4		     // JumpForwards
 	};
 	// Hand
 	public int handCount;
